@@ -14,6 +14,7 @@ module.exports = (app) => {
     authorization.checkToken,
     forumController.detil
   );
+  app.get("/detil-forum/v2/:id", forumController.detilV2);
   app.post(
     "/tambahkan-forum",
     authorization.checkAuth,

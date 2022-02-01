@@ -28,6 +28,18 @@ exports.detil = async (req, res) => {
   }
 };
 
+exports.detilV2 = async (req, res) => {
+  try {
+    return res.send(await forumModel.readByV2(`forum`, req.params.id));
+  } catch (err) {
+    return res.send({
+      status: "error",
+      message: err.message,
+      data: null,
+    });
+  }
+};
+
 exports.tambahkan = async (req, res) => {
   try {
     console.log(res.locals.anggota);
